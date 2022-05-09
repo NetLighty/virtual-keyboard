@@ -1,4 +1,21 @@
+import {allKeysInformation, allRussianKeysInformation} from './modules/keys.js'
+
+let keys=[]
 //Listeners
+function mouseupListener(event){
+}
+function mousedownListener(event){
+    const keyEvent= new KeyboardEvent('keydown', {
+        key: event.target.id,
+        code: event.target.id,
+        bubbles: true,
+        metaKey: true,
+        isComposing: true,
+        repeat: true,
+    })
+    console.log(keyEvent)
+    document.dispatchEvent(keyEvent)
+}
 function keyupListener(event){
   input.focus()
   let keyCode= null
@@ -174,3 +191,19 @@ else createKeys(allRussianKeysInformation)
 }
 
 initKeys()
+
+//elements
+const input= document.getElementById('input')
+//some keys
+const functionalKeysCodes=['Backspace', 'Tab', 'Delete', 'AltLeft', 'AltRight',
+ 'ControlLeft', 'ControlRight', 'Enter', 'ShiftRight', 'ShiftLeft','CapsLock']
+const textKeysCodes=[, 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY','KeyU', 'KeyI', 'KeyO', 'KeyP',  'KeyA', 'KeyS', 'KeyD',
+    'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL',  'KeyZ', 'KeyX', 'KeyC', 'KeyV','KeyB', 'KeyN', 'KeyM']
+const symbolsKeysCodes=['Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7',
+'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backslash', 'Slash']
+const arrowKeyCodes=['ArrowDown','ArrowLeft', 'ArrowUp', 'ArrowRight',]
+const withRussianCodes=['Backquote','Comma', 'Period', 'BracketLeft', 'BracketRight','Semicolon', 'Quote']
+//events
+
+document.addEventListener('keydown', keydownListener)
+document.addEventListener('keyup', keyupListener)
