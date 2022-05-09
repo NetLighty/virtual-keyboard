@@ -192,6 +192,46 @@ else createKeys(allRussianKeysInformation)
 
 initKeys()
 
+//
+function insertAtCaret(areaId, text) {
+  let txtarea = document.getElementById(areaId)
+  const scrollPos = txtarea.scrollTop
+  let caretPos = txtarea.selectionStart
+
+  const front = (txtarea.value).substring(0, caretPos)
+  const back = (txtarea.value).substring(txtarea.selectionEnd, txtarea.value.length)
+  txtarea.value = front + text + back
+  caretPos = caretPos + text.length
+  txtarea.selectionStart = caretPos
+  txtarea.selectionEnd = caretPos
+  txtarea.focus()
+  txtarea.scrollTop = scrollPos
+}
+function backspaceAtCaret(areaId){
+  let txtarea = document.getElementById(areaId)
+  const scrollPos = txtarea.scrollTop
+  let caretPos = txtarea.selectionStart
+  const front = (txtarea.value).substring(0, caretPos-1)
+  const back = (txtarea.value).substring(txtarea.selectionEnd, txtarea.value.length)
+  txtarea.value= front+back
+  caretPos = caretPos - 1
+  txtarea.selectionStart = caretPos
+  txtarea.selectionEnd = caretPos
+  txtarea.focus()
+  txtarea.scrollTop = scrollPos
+}
+function deleteAtCaret(areaId){
+  let txtarea = document.getElementById(areaId)
+  const scrollPos = txtarea.scrollTop
+  let caretPos = txtarea.selectionStart
+  const front = (txtarea.value).substring(0, caretPos)
+  const back = (txtarea.value).substring(txtarea.selectionEnd+1, txtarea.value.length)
+  txtarea.value= front+back
+  txtarea.selectionStart = caretPos
+  txtarea.selectionEnd = caretPos
+  txtarea.focus()
+  txtarea.scrollTop = scrollPos
+}
 //elements
 const input= document.getElementById('input')
 //some keys
