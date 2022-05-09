@@ -44,4 +44,87 @@ html {
   justify-self: center;
   grid-template-columns: repeat(15, 50px);
   grid-template-rows: repeat(5, 1fr);
+}
+
+.key {
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  background-color: transparent;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  transform: translateY(-1px);
+  border: 1px solid #8e44ad;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  transition: box-shadow 0s ease-in-out, color 1s ease-in-out;
+}
+
+.key:hover {
+  box-shadow: 0 0 40px 40px rgba(142, 68, 173, 0.5) inset;
+}
+
+.subText {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  font-size: 1.2rem;
+}
+
+.backspace {
+  width: 90px;
+  grid-column-start: 14;
+  grid-column-end: 16;
+}
+
+.enter {
+  width: 90px;
+  grid-column-start: 14;
+  grid-column-end: 16;
+}
+
+.caps-lock {
+  width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.shift {
+  width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.double-left {
+  width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.double-right {
+  width: 90px;
+  grid-column-start: 14;
+  grid-column-end: 16;
+}
+
+.space {
+  width: 290px;
+  grid-column-start: 4;
+  grid-column-end: 10;
+}
+
+.dark {
+  color: whitesmoke;
+  background-color: rgba(142, 68, 173, 0.3);
+}
+
+.pressed {
+  background-color: rgb(142, 68, 173);
+  transform: translateY(1.5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
 }/*# sourceMappingURL=styles.css.map */

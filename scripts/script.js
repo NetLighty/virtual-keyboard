@@ -13,7 +13,7 @@ function mousedownListener(event){
         isComposing: true,
         repeat: true,
     })
-    console.log(keyEvent)
+    //console.log(keyEvent)
     document.dispatchEvent(keyEvent)
 }
 function keyupListener(event){
@@ -52,7 +52,7 @@ function keydownListener(event){
     let keyCode= null
     const isKeyboardEvent= event.target.id ? true : false
     keyCode=event.code
-    console.log('keyboardEvent: '+isKeyboardEvent)
+    //console.log('keyboardEvent: '+isKeyboardEvent)
     const key= document.getElementById(keyCode)
     const shiftLeft= document.getElementById('ShiftLeft')
     const shiftRight= document.getElementById('ShiftRight')
@@ -67,7 +67,7 @@ function keydownListener(event){
       isCapsPressed=true
     }
     if(isCapsPressed ^ isShiftPressed) isLowerCase=true
-    console.log(`isLowerCase: ${isCapsPressed^isShiftPressed}`)
+    //console.log(`isLowerCase: ${isCapsPressed^isShiftPressed}`)
     let virtualKey= null
     if(!currentLang || currentLang==='eng'){
         virtualKey= allKeysInformation.filter(el=> el.id===keyCode)[0]
@@ -85,7 +85,7 @@ function keydownListener(event){
     if(textKeysCodes.includes(keyCode)) textKey= virtualKey
     if(functionalKeysCodes.includes(keyCode)) functionalKey= virtualKey
     if(withRussianKey || textKey || keyCode==='AltLeft' || keyCode==='AltRight' || keyCode==='Tab' || keyCode==='MetaLeft')event.preventDefault()
-  console.log(keyCode)
+  //console.log(keyCode)
   input.focus()
   if(keyCode==='Space') insertAtCaret('input',  ' ')
   if(keyCode==='Enter' && !isKeyboardEvent) insertAtCaret('input', `\n`)
@@ -98,7 +98,7 @@ function keydownListener(event){
   if(textKey) isLowerCase ? insertAtCaret('input', textKey.text) : insertAtCaret('input', textKey.text.toLowerCase())
   //if(textKey) input.value+= isShiftPressed ? textKey.text : textKey.text.toLowerCase()
   if(keyCode==='CapsLock'){
-      console.log('isCapsPressed: '+isCapsPressed)
+      //console.log('isCapsPressed: '+isCapsPressed)
       if(isCapsPressed) caps.classList.remove('pressed')
       else caps.classList.add('pressed')
   }else{
