@@ -1,0 +1,130 @@
+html {
+  font-size: 10px;
+  background-color: black;
+}
+
+.main-container {
+  position: relative;
+  display: grid;
+  grid-template-rows: 60px 1fr 260px;
+  grid-gap: 25px;
+  justify-content: center;
+  top: 42vh;
+  margin-top: -280px;
+}
+
+.keyboard-tip {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  font-size: 2.5rem;
+  color: rgb(142, 68, 173);
+}
+
+.input {
+  width: 750px;
+  height: 200px;
+  box-sizing: border-box;
+  border: 0px;
+  margin-bottom: 1px;
+  background-color: transparent;
+  color: rgb(142, 68, 173);
+  box-shadow: 0px 0px 10px #8e44ad;
+  font-size: 2.1rem;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px #8e44ad;
+}
+
+.keyboard-container {
+  display: grid;
+  width: 750px;
+  justify-self: center;
+  grid-template-columns: repeat(15, 50px);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.key {
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  background-color: transparent;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  transform: translateY(-1px);
+  border: 1px solid #8e44ad;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  transition: box-shadow 0s ease-in-out, color 1s ease-in-out;
+}
+
+.key:hover {
+  box-shadow: 0 0 40px 40px rgba(142, 68, 173, 0.5) inset;
+}
+
+.subText {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  font-size: 1.2rem;
+}
+
+.backspace {
+  width: 90px;
+  grid-column-start: 14;
+  grid-column-end: 16;
+}
+
+.enter {
+  width: 90px;
+  grid-column-start: 14;
+  grid-column-end: 16;
+}
+
+.caps-lock {
+  width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.shift {
+  width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.double-left {
+  width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.double-right {
+  width: 90px;
+  grid-column-start: 14;
+  grid-column-end: 16;
+}
+
+.space {
+  width: 290px;
+  grid-column-start: 4;
+  grid-column-end: 10;
+}
+
+.dark {
+  color: whitesmoke;
+  background-color: rgba(142, 68, 173, 0.3);
+}
+
+.pressed {
+  background-color: rgb(142, 68, 173);
+  transform: translateY(1.5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}/*# sourceMappingURL=styles.css.map */
