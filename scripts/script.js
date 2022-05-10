@@ -106,7 +106,6 @@ function keydownListener(event){
   }
 }
 
-
 //Page initialisation-------
 //create main container
 function createMainContainer(){
